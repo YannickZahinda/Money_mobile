@@ -20,8 +20,9 @@
 
 ![badgetApp](https://user-images.githubusercontent.com/57408419/184454848-f5fa90bc-58ab-46ae-8e5a-29fed6fa8572.png)
 
-### [live Mobile Money](https://strong-panda-83b829.netlify.app)
+### [live Mobile Money](https://vast-lake-14237.herokuapp.com/)
 ### [live video](https://www.loom.com/share/fa45407994fd46258ee868c77981b2c8)
+## [additional video](https://www.loom.com/share/5169eea4149b4fbca39ad7b0692b20f4)
 
 ## Getting Started
 
@@ -69,6 +70,11 @@ rspec
 
 ## Authors
 
+  👤 **Yannic Zahinda**
+
+- GitHub: [Yannick](https://github.com/YannickZahinda)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/pascal-kabika-443061220/)
+
 
 ## 🤝 Contributing
 
@@ -82,9 +88,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+ credit to [Gregoire Vella](https://www.behance.net/gregoirevella) on Behance [the author of the original design](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ## 📝 License
 

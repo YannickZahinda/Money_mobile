@@ -41,7 +41,7 @@
     height: 100%;
     width: 100%;
     position: fixed;
-    background-color: #8f209a;
+    background-color: #2a209a;
  }
 
  .home_log h1 {
@@ -114,7 +114,8 @@
     max-width: 414px;
     padding-top: 1rem;
     margin: 0 auto;
-    background-color: #8f209a;
+    /* background-color: #8f209a; */
+    background-color: rgb(54,113,183);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -149,8 +150,9 @@
     text-align: center;
     margin-top: 10px;
     color: #f3f4f7;
-    background-color: rgb(17, 18, 17);
-    border-radius: 20px;
+    background-color: rgb(32, 184, 32);
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
     padding: 10px 30px;
     text-decoration: none;
  }
@@ -182,7 +184,7 @@
  }
 
  .add_category a {
-   background-color: rgb(23, 23, 21);
+   background-color: rgba(75, 176, 80, 0.98);
    border-top-left-radius: 10px;
    border-bottom-right-radius: 10px;
    text-decoration: none;
