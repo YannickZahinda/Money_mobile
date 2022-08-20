@@ -69,6 +69,11 @@ rspec
 
 ## Authors
 
+  👤 **Yannic Zahinda**
+
+- GitHub: [Yannick](https://github.com/YannickZahinda)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/pascal-kabika-443061220/)
+
 
 ## 🤝 Contributing
 
