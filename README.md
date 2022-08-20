@@ -91,6 +91,8 @@ Give a ⭐️ if you like this project!
 - Inspiration
 - etc
 
+ credit to [Gregoire Vella](https://www.behance.net/gregoirevella) on Behance [the author of the original design](https://creativecommons.org/licenses/by-nc/4.0/)
+
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
