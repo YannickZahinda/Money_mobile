@@ -1691,3 +1691,54 @@ Processing by UnlocksController#index as HTML
 Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 3768)
 
 
+Started GET "/" for ::1 at 2022-08-21 00:31:16 +0200
+Processing by UnlocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering unlocks/index.html.erb within layouts/application
+  Rendered unlocks/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 106)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 104)
+  Rendered layout layouts/application.html.erb (Duration: 182.7ms | Allocations: 2668)
+Completed 200 OK in 198ms (Views: 187.2ms | Allocations: 3660)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-08-21 00:31:30 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 142)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1287)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 58)
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 3789)
+Completed 200 OK in 51ms (Views: 30.0ms | Allocations: 4966)
+
+
+Started GET "/" for ::1 at 2022-08-21 00:33:15 +0200
+Processing by UnlocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering unlocks/index.html.erb within layouts/application
+  Rendered unlocks/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 106)
+  Rendered layouts/_navbar.html.erb (Duration: 1.8ms | Allocations: 104)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 2665)
+Completed 200 OK in 24ms (Views: 21.3ms | Allocations: 3658)
+
+
+Started GET "/" for ::1 at 2022-08-21 00:33:44 +0200
+Processing by UnlocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering unlocks/index.html.erb within layouts/application
+  Rendered unlocks/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 106)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 104)
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 6055)
+Completed 200 OK in 47ms (Views: 42.0ms | Allocations: 7053)
+
+
+Started GET "/" for ::1 at 2022-08-21 00:34:05 +0200
+Processing by UnlocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering unlocks/index.html.erb within layouts/application
+  Rendered unlocks/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 372)
+  Rendered layouts/_navbar.html.erb (Duration: 5.7ms | Allocations: 456)
+  Rendered layout layouts/application.html.erb (Duration: 41.4ms | Allocations: 3884)
+Completed 200 OK in 72ms (Views: 59.8ms | Allocations: 5743)
+
+
