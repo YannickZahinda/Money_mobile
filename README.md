@@ -20,8 +20,8 @@
 
 ![badgetApp](https://user-images.githubusercontent.com/57408419/184454848-f5fa90bc-58ab-46ae-8e5a-29fed6fa8572.png)
 
-### [live badgetApp](https://vast-lake-14237.herokuapp.com/)
-### [live video](_____https://www.loom.com/share/ed72adfcaedc484cb391d77a33739d07)
+### [live Mobile Money](https://vast-lake-14237.herokuapp.com/)
+### [live video](https://www.loom.com/share/fa45407994fd46258ee868c77981b2c8)
 
 ## Getting Started
 

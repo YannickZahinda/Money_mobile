@@ -907,3 +907,419 @@ Completed 200 OK in 27ms (Views: 12.2ms | ActiveRecord: 2.6ms | Allocations: 421
   [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7278333278047023150)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7278333278047023150)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7278333278047023150)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-08-20 17:45:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UnlocksController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/unlocks_controller.rb:3:in `index'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 64ms (ActiveRecord: 10.3ms | Allocations: 16233)
+
+
+Started GET "/users" for ::1 at 2022-08-20 17:45:42 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 13.5ms | Allocations: 621)
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 445)
+  Rendered layout layouts/application.html.erb (Duration: 241.3ms | Allocations: 52747)
+Completed 200 OK in 296ms (Views: 256.0ms | ActiveRecord: 0.3ms | Allocations: 57638)
+
+
+Started GET "/categories" for ::1 at 2022-08-20 17:45:46 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:3
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/categories/index.html.erb:6
+  [1m[36mTransaction Sum (1.0ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 13.7ms | Allocations: 5216)
+  [1m[36mTransaction Sum (0.8ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 3.1ms | Allocations: 826)
+  Rendered categories/index.html.erb within layouts/application (Duration: 55.3ms | Allocations: 15650)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 61.5ms | Allocations: 18384)
+Completed 200 OK in 105ms (Views: 55.5ms | ActiveRecord: 8.2ms | Allocations: 29512)
+
+
+Started GET "/Sterling" for ::1 at 2022-08-20 17:45:46 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Sterling"):
+  
+Started GET "/Euro" for ::1 at 2022-08-20 17:45:46 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Euro"):
+  
+Started GET "/categories" for ::1 at 2022-08-20 17:48:14 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:3
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/categories/index.html.erb:6
+  [1m[36mTransaction Sum (0.7ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 18.2ms | Allocations: 850)
+  [1m[36mTransaction Sum (0.7ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 6.8ms | Allocations: 782)
+  Rendered categories/index.html.erb within layouts/application (Duration: 43.5ms | Allocations: 3066)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 85.3ms | Allocations: 9456)
+Completed 200 OK in 113ms (Views: 84.5ms | ActiveRecord: 5.8ms | Allocations: 11299)
+
+
+Started GET "/Euro" for ::1 at 2022-08-20 17:48:16 +0200
+Started GET "/Sterling" for ::1 at 2022-08-20 17:48:16 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Euro"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/Sterling"):
+  
+Started GET "/users" for ::1 at 2022-08-20 17:48:25 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 57)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 2584)
+Completed 200 OK in 57ms (Views: 40.5ms | ActiveRecord: 0.7ms | Allocations: 4233)
+
+
+Started GET "/Sterling" for ::1 at 2022-08-20 17:48:25 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Sterling"):
+  
+Started GET "/Euro" for ::1 at 2022-08-20 17:48:25 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Euro"):
+  
+Started GET "/categories" for ::1 at 2022-08-20 17:51:32 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Exists? (4.2ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:3
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/categories/index.html.erb:6
+  [1m[36mTransaction Sum (3.4ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 5.1ms | Allocations: 797)
+  [1m[36mTransaction Sum (3.2ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 5.0ms | Allocations: 783)
+  Rendered categories/index.html.erb within layouts/application (Duration: 19.2ms | Allocations: 2976)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 5528)
+Completed 200 OK in 35ms (Views: 17.4ms | ActiveRecord: 12.3ms | Allocations: 7197)
+
+
+Started GET "/Euro" for ::1 at 2022-08-20 17:51:32 +0200
+Started GET "/Sterling" for ::1 at 2022-08-20 17:51:32 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Euro"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/Sterling"):
+  
+Started GET "/" for ::1 at 2022-08-20 17:59:36 +0200
+Processing by UnlocksController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/unlocks_controller.rb:3:in `index'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 101ms (ActiveRecord: 19.1ms | Allocations: 4667)
+
+
+Started GET "/users" for ::1 at 2022-08-20 17:59:36 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 57)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 2584)
+Completed 200 OK in 17ms (Views: 11.1ms | ActiveRecord: 0.4ms | Allocations: 4219)
+
+
+Started GET "/" for ::1 at 2022-08-20 18:01:09 +0200
+Processing by UnlocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering unlocks/index.html.erb within layouts/application
+  Rendered unlocks/index.html.erb within layouts/application (Duration: 37.9ms | Allocations: 378)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 128)
+  Rendered layout layouts/application.html.erb (Duration: 102.5ms | Allocations: 3205)
+Completed 200 OK in 175ms (Views: 132.7ms | ActiveRecord: 0.0ms | Allocations: 4417)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-08-20 18:01:12 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2022-08-20 18:02:17 +0200
+Processing by UnlocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering unlocks/index.html.erb within layouts/application
+  Rendered unlocks/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 372)
+  Rendered layouts/_navbar.html.erb (Duration: 3.8ms | Allocations: 456)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 3893)
+Completed 200 OK in 24ms (Views: 20.2ms | ActiveRecord: 0.0ms | Allocations: 5312)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-08-20 18:02:29 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.8ms | Allocations: 280)
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | Allocations: 733)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 66.4ms | Allocations: 10110)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 71.5ms | Allocations: 12800)
+Completed 200 OK in 87ms (Views: 76.5ms | ActiveRecord: 0.0ms | Allocations: 15136)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-08-20 18:03:40 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 86)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1504)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 3996)
+Completed 200 OK in 65ms (Views: 32.8ms | ActiveRecord: 0.0ms | Allocations: 4730)
+
+
+Started POST "/users" for ::1 at 2022-08-20 18:03:56 +0200
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Yannick", "email"=>"ymulikuza@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ymulikuza@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "ymulikuza@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-08-20 16:03:56.913747"], ["updated_at", "2022-08-20 16:03:56.913747"], ["name", "Yannick"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 388ms (ActiveRecord: 8.4ms | Allocations: 9479)
+
+
+Started GET "/" for ::1 at 2022-08-20 18:03:56 +0200
+Processing by UnlocksController#index as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/unlocks_controller.rb:3:in `index'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms | Allocations: 1158)
+
+
+Started GET "/users" for ::1 at 2022-08-20 18:03:56 +0200
+Processing by UsersController#index as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 273)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 74)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 3077)
+Completed 200 OK in 60ms (Views: 17.7ms | ActiveRecord: 0.4ms | Allocations: 4993)
+
+
+Started POST "/users" for ::1 at 2022-08-20 18:05:31 +0200
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Yannick", "email"=>"ymulikuza@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 48ms (ActiveRecord: 0.6ms | Allocations: 1661)
+
+
+Started GET "/" for ::1 at 2022-08-20 18:05:31 +0200
+Processing by UnlocksController#index as TURBO_STREAM
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/unlocks_controller.rb:3:in `index'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 14ms (ActiveRecord: 0.6ms | Allocations: 1085)
+
+
+Started GET "/users" for ::1 at 2022-08-20 18:05:31 +0200
+Processing by UsersController#index as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 57)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 2583)
+Completed 200 OK in 29ms (Views: 21.5ms | ActiveRecord: 0.4ms | Allocations: 3818)
+
+
+Started GET "/categories" for ::1 at 2022-08-20 18:05:44 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:3
+  Rendered categories/index.html.erb within layouts/application (Duration: 33.7ms | Allocations: 1183)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 44.9ms | Allocations: 3924)
+Completed 200 OK in 71ms (Views: 60.3ms | ActiveRecord: 3.8ms | Allocations: 5798)
+
+
+Started GET "/categories/new" for ::1 at 2022-08-20 18:06:13 +0200
+Processing by CategoriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 9.1ms | Allocations: 1354)
+  Rendered categories/new.html.erb within layouts/application (Duration: 16.0ms | Allocations: 1627)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 111)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 4177)
+Completed 200 OK in 45ms (Views: 41.8ms | ActiveRecord: 0.0ms | Allocations: 4629)
+
+
+Started POST "/categories" for ::1 at 2022-08-20 18:06:24 +0200
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"Car", "icon"=>"Sterling"}, "commit"=>"Save"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:39:in `category_params'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:18:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:18:in `create'
+  [1m[36mCategory Create (3.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Car"], ["icon", "Sterling"], ["user_id", 3], ["created_at", "2022-08-20 16:06:24.033368"], ["updated_at", "2022-08-20 16:06:24.033368"]]
+  ↳ app/controllers/categories_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:18:in `create'
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 28ms (ActiveRecord: 5.4ms | Allocations: 5068)
+
+
+Started GET "/categories" for ::1 at 2022-08-20 18:06:26 +0200
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:3
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/categories/index.html.erb:6
+  [1m[36mTransaction Sum (3.8ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 4]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 36.4ms | Allocations: 1100)
+  Rendered categories/index.html.erb within layouts/application (Duration: 72.8ms | Allocations: 2481)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 131.2ms | Allocations: 5011)
+Completed 200 OK in 152ms (Views: 129.5ms | ActiveRecord: 6.7ms | Allocations: 6256)
+
+
+Started GET "/Sterling" for ::1 at 2022-08-20 18:06:28 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Sterling"):
+  
+Started GET "/categories/new" for ::1 at 2022-08-20 18:06:42 +0200
+Processing by CategoriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 2.0ms | Allocations: 895)
+  Rendered categories/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 968)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 108)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 3537)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 3884)
+
+
+Started GET "/categories/Sterling" for ::1 at 2022-08-20 18:06:42 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"Sterling"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:7:in `show'
+Completed 404 Not Found in 21ms (ActiveRecord: 0.6ms | Allocations: 1493)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Category with 'id'=Sterling):
+  
+app/controllers/categories_controller.rb:7:in `show'
+Started POST "/categories" for ::1 at 2022-08-20 18:06:52 +0200
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"Gitcoin", "icon"=>"Sterling"}, "commit"=>"Save"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:39:in `category_params'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:18:in `create'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:18:in `create'
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gitcoin"], ["icon", "Sterling"], ["user_id", 3], ["created_at", "2022-08-20 16:06:52.376958"], ["updated_at", "2022-08-20 16:06:52.376958"]]
+  ↳ app/controllers/categories_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:18:in `create'
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 34ms (ActiveRecord: 4.0ms | Allocations: 3812)
+
+
+Started GET "/categories" for ::1 at 2022-08-20 18:06:54 +0200
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:3
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/categories/index.html.erb:6
+  [1m[36mTransaction Sum (1.2ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 4]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 8.7ms | Allocations: 797)
+  [1m[36mTransaction Sum (0.5ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 5]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 3.9ms | Allocations: 782)
+  Rendered categories/index.html.erb within layouts/application (Duration: 33.2ms | Allocations: 2977)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 45.1ms | Allocations: 5504)
+Completed 200 OK in 51ms (Views: 43.5ms | ActiveRecord: 3.9ms | Allocations: 6727)
+
+
+Started GET "/Sterling" for ::1 at 2022-08-20 18:06:56 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Sterling"):
+  
+Started DELETE "/users/sign_out" for ::1 at 2022-08-20 18:07:04 +0200
+Processing by SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 72ms (ActiveRecord: 1.7ms | Allocations: 3249)
+
+
+Started GET "/" for ::1 at 2022-08-20 18:07:06 +0200
+Processing by UnlocksController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering unlocks/index.html.erb within layouts/application
+  Rendered unlocks/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 125)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 108)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 2834)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 3487)
+
+
+Started GET "/Sterling" for ::1 at 2022-08-20 18:07:08 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Sterling"):
+  
