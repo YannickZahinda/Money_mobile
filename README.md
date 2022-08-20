@@ -87,10 +87,6 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
  credit to [Gregoire Vella](https://www.behance.net/gregoirevella) on Behance [the author of the original design](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ## 📝 License
