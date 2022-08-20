@@ -1615,3 +1615,79 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 25ms (Views: 19.7ms | ActiveRecord: 0.4ms | Allocations: 6994)
 
 
+Started DELETE "/users/sign_out" for ::1 at 2022-08-20 22:44:35 +0200
+Processing by SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 133ms (ActiveRecord: 20.7ms | Allocations: 6068)
+
+
+Started GET "/" for ::1 at 2022-08-20 22:44:37 +0200
+Processing by UnlocksController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering unlocks/index.html.erb within layouts/application
+  Rendered unlocks/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 373)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 128)
+  Rendered layout layouts/application.html.erb (Duration: 41.9ms | Allocations: 5070)
+Completed 200 OK in 57ms (Views: 48.1ms | ActiveRecord: 0.0ms | Allocations: 6838)
+
+
+Started GET "/" for ::1 at 2022-08-20 22:44:39 +0200
+Processing by UnlocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering unlocks/index.html.erb within layouts/application
+  Rendered unlocks/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 106)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 104)
+  Rendered layout layouts/application.html.erb (Duration: 79.1ms | Allocations: 2666)
+Completed 200 OK in 85ms (Views: 80.9ms | ActiveRecord: 0.0ms | Allocations: 3747)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-08-20 22:49:45 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.6ms | Allocations: 239)
+  Rendered devise/shared/_links.html.erb (Duration: 13.3ms | Allocations: 541)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 44.9ms | Allocations: 2952)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 129.1ms | Allocations: 5652)
+Completed 200 OK in 171ms (Views: 145.7ms | Allocations: 7746)
+
+
+Started POST "/users" for ::1 at 2022-08-20 22:50:40 +0200
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Yannick Zahinda", "email"=>"yannick@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (6.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yannick@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 10.3ms | Allocations: 580)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 96.9ms | Allocations: 2701)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 66)
+  Rendered layout layouts/application.html.erb (Duration: 137.9ms | Allocations: 5253)
+Completed 200 OK in 1309ms (Views: 141.6ms | ActiveRecord: 51.0ms | Allocations: 14249)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-08-20 22:50:47 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 449)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 40.5ms | Allocations: 6439)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layout layouts/application.html.erb (Duration: 46.3ms | Allocations: 9127)
+Completed 200 OK in 64ms (Views: 61.7ms | ActiveRecord: 0.0ms | Allocations: 11131)
+
+
+Started GET "/" for ::1 at 2022-08-20 22:51:04 +0200
+Processing by UnlocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering unlocks/index.html.erb within layouts/application
+  Rendered unlocks/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 106)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 105)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2668)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 3768)
+
+

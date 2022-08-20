@@ -20,7 +20,7 @@
 
 ![badgetApp](https://user-images.githubusercontent.com/57408419/184454848-f5fa90bc-58ab-46ae-8e5a-29fed6fa8572.png)
 
-### [live Mobile Money](https://strong-panda-83b829.netlify.app)
+### [live Mobile Money](https://vast-lake-14237.herokuapp.com/)
 ### [live video](https://www.loom.com/share/fa45407994fd46258ee868c77981b2c8)
 
 ## Getting Started
