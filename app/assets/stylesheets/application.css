@@ -150,8 +150,9 @@
     text-align: center;
     margin-top: 10px;
     color: #f3f4f7;
-    background-color: rgb(17, 18, 17);
-    border-radius: 20px;
+    background-color: rgb(32, 184, 32);
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
     padding: 10px 30px;
     text-decoration: none;
  }

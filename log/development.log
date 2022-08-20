@@ -1559,3 +1559,59 @@ ActionController::RoutingError (No route matches [GET] "/Euro"):
   
 ActionController::RoutingError (No route matches [GET] "/Sterling"):
   
+Started GET "/users" for ::1 at 2022-08-20 22:18:12 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 57)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 2584)
+Completed 200 OK in 168ms (Views: 15.6ms | ActiveRecord: 27.5ms | Allocations: 7364)
+
+
+Started GET "/Euro" for ::1 at 2022-08-20 22:18:14 +0200
+Started GET "/Sterling" for ::1 at 2022-08-20 22:18:14 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Sterling"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/Euro"):
+  
+Started GET "/users" for ::1 at 2022-08-20 22:19:33 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 57)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 5412)
+Completed 200 OK in 32ms (Views: 24.3ms | ActiveRecord: 0.7ms | Allocations: 7049)
+
+
+Started GET "/users" for ::1 at 2022-08-20 22:20:01 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 57)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 5891)
+Completed 200 OK in 36ms (Views: 25.5ms | ActiveRecord: 3.6ms | Allocations: 7521)
+
+
+Started GET "/users" for ::1 at 2022-08-20 22:21:01 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 57)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 5366)
+Completed 200 OK in 25ms (Views: 19.7ms | ActiveRecord: 0.4ms | Allocations: 6994)
+
+
