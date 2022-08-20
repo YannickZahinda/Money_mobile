@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Transaction, type: :model do
   subject do
-    user = User.create(name: 'joel', email: 'joel@test.come', password: '1234567')
-    category = Category.create(user:, name: 'transport', icon: 't_icon')
-    Transaction.new(user:, category:, name: 'January', amount: 30)
+    user = User.create(name: 'yan', email: 'joel@test.come', password: '1234567')
+    category = Category.create(user:'yan', name: 'transport', icon: 't_icon')
+    Transaction.new(user:'yan', category:'dollars', name: 'January', amount: 30)
   end
 
   before { subject.save }

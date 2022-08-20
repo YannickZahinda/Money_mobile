@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
   subject do
-    user = User.create(name: 'joel', email: 'joel@test.come', password: '1234567')
-    Category.new(user:, name: 'transport', icon: 't_icon')
+    user = User.create(name: 'Yannick', email: 'ymulik@test.come', password: '1234567')
+    Category.new(user: 'Yannick', name: 'transport', icon: 't_icon')
   end
 
   before { subject.save }

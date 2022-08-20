@@ -114,7 +114,8 @@
     max-width: 414px;
     padding-top: 1rem;
     margin: 0 auto;
-    background-color: #8f209a;
+    /* background-color: #8f209a; */
+    background-color: rgb(54,113,183);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -182,7 +183,7 @@
  }
 
  .add_category a {
-   background-color: rgb(23, 23, 21);
+   background-color: rgba(75, 176, 80, 0.98);
    border-top-left-radius: 10px;
    border-bottom-right-radius: 10px;
    text-decoration: none;

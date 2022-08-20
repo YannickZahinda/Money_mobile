@@ -1,4 +1,6 @@
-class CategoriesController < ApplicationController
+# frozen_string_literal: true
+
+class CategoriesController < ApplicationController # rubocop:todo Style/Documentation
   def index
     @categories = current_user.categories
   end

@@ -1,4 +1,6 @@
-class TransactionsController < ApplicationController
+# frozen_string_literal: true
+
+class TransactionsController < ApplicationController # rubocop:todo Style/Documentation
   def new
     @transaction = Transaction.new
     @category = Category.where(author_id: current_user.id)

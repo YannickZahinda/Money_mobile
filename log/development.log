@@ -1323,3 +1323,239 @@ Started GET "/Sterling" for ::1 at 2022-08-20 18:07:08 +0200
   
 ActionController::RoutingError (No route matches [GET] "/Sterling"):
   
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7278333278047023150)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7278333278047023150)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-08-20 22:00:52 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UnlocksController#index as HTML
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/unlocks_controller.rb:5:in `index'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 34ms (ActiveRecord: 4.2ms | Allocations: 7313)
+
+
+Started GET "/users" for ::1 at 2022-08-20 22:00:54 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 277)
+  Rendered layouts/_navbar.html.erb (Duration: 1.3ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 51.9ms | Allocations: 16232)
+Completed 200 OK in 64ms (Views: 58.2ms | ActiveRecord: 0.3ms | Allocations: 19004)
+
+
+Started GET "/categories" for ::1 at 2022-08-20 22:01:01 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Exists? (13.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:3
+  [1m[36mCategory Load (5.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/categories/index.html.erb:6
+  [1m[36mTransaction Sum (1.4ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 31.7ms | Allocations: 4640)
+  [1m[36mTransaction Sum (0.4ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 4.6ms | Allocations: 825)
+  Rendered categories/index.html.erb within layouts/application (Duration: 78.6ms | Allocations: 10343)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 85.3ms | Allocations: 13087)
+Completed 200 OK in 109ms (Views: 66.8ms | ActiveRecord: 21.8ms | Allocations: 18571)
+
+
+Started GET "/Sterling" for ::1 at 2022-08-20 22:01:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Sterling"):
+  
+Started GET "/Euro" for ::1 at 2022-08-20 22:01:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Euro"):
+  
+Started GET "/categories" for ::1 at 2022-08-20 22:03:39 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:3
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/categories/index.html.erb:6
+  [1m[36mTransaction Sum (1.0ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 4.6ms | Allocations: 797)
+  [1m[36mTransaction Sum (0.8ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 3.5ms | Allocations: 783)
+  Rendered categories/index.html.erb within layouts/application (Duration: 16.7ms | Allocations: 2991)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 63.6ms | Allocations: 9380)
+Completed 200 OK in 76ms (Views: 60.9ms | ActiveRecord: 4.4ms | Allocations: 11102)
+
+
+Started GET "/Euro" for ::1 at 2022-08-20 22:03:42 +0200
+Started GET "/Sterling" for ::1 at 2022-08-20 22:03:42 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Euro"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/Sterling"):
+  
+Started GET "/categories" for ::1 at 2022-08-20 22:04:20 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:3
+  [1m[36mCategory Load (2.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/categories/index.html.erb:6
+  [1m[36mTransaction Sum (0.7ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 3.0ms | Allocations: 797)
+  [1m[36mTransaction Sum (0.8ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 2.5ms | Allocations: 782)
+  Rendered categories/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 2974)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | Allocations: 8777)
+Completed 200 OK in 43ms (Views: 30.0ms | ActiveRecord: 6.7ms | Allocations: 10450)
+
+
+Started GET "/Euro" for ::1 at 2022-08-20 22:04:22 +0200
+Started GET "/Sterling" for ::1 at 2022-08-20 22:04:22 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Euro"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/Sterling"):
+  
+Started GET "/categories" for ::1 at 2022-08-20 22:05:04 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:3
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/categories/index.html.erb:6
+  [1m[36mTransaction Sum (1.7ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 5.3ms | Allocations: 797)
+  [1m[36mTransaction Sum (0.9ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 2.7ms | Allocations: 782)
+  Rendered categories/index.html.erb within layouts/application (Duration: 16.9ms | Allocations: 2974)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | Allocations: 8777)
+Completed 200 OK in 44ms (Views: 27.4ms | ActiveRecord: 9.0ms | Allocations: 10435)
+
+
+Started GET "/Euro" for ::1 at 2022-08-20 22:05:06 +0200
+Started GET "/Sterling" for ::1 at 2022-08-20 22:05:06 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Euro"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/Sterling"):
+  
+Started GET "/categories" for ::1 at 2022-08-20 22:05:18 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:3
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/categories/index.html.erb:6
+  [1m[36mTransaction Sum (0.6ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 3.1ms | Allocations: 797)
+  [1m[36mTransaction Sum (0.7ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 2.5ms | Allocations: 782)
+  Rendered categories/index.html.erb within layouts/application (Duration: 13.1ms | Allocations: 2974)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | Allocations: 8284)
+Completed 200 OK in 34ms (Views: 24.3ms | ActiveRecord: 4.3ms | Allocations: 9940)
+
+
+Started GET "/Euro" for ::1 at 2022-08-20 22:05:20 +0200
+Started GET "/Sterling" for ::1 at 2022-08-20 22:05:20 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Sterling"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/Euro"):
+  
+Started GET "/categories" for ::1 at 2022-08-20 22:05:58 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:3
+  [1m[36mCategory Load (2.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/categories/index.html.erb:6
+  [1m[36mTransaction Sum (1.2ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 4.6ms | Allocations: 797)
+  [1m[36mTransaction Sum (2.0ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 5.7ms | Allocations: 782)
+  Rendered categories/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 2974)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 36.4ms | Allocations: 9712)
+Completed 200 OK in 45ms (Views: 30.2ms | ActiveRecord: 8.1ms | Allocations: 11371)
+
+
+Started GET "/Euro" for ::1 at 2022-08-20 22:06:00 +0200
+Started GET "/Sterling" for ::1 at 2022-08-20 22:06:00 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Euro"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/Sterling"):
+  
+Started GET "/categories" for ::1 at 2022-08-20 22:07:10 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:3
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/categories/index.html.erb:6
+  [1m[36mTransaction Sum (1.4ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 5.7ms | Allocations: 797)
+  [1m[36mTransaction Sum (1.1ms)[0m  [1m[34mSELECT SUM("transactions"."amount") FROM "transactions" WHERE "transactions"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/_category.html.erb:9
+  Rendered categories/_category.html.erb (Duration: 3.6ms | Allocations: 782)
+  Rendered categories/index.html.erb within layouts/application (Duration: 16.3ms | Allocations: 2974)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 7862)
+Completed 200 OK in 41ms (Views: 25.7ms | ActiveRecord: 6.8ms | Allocations: 9542)
+
+
+Started GET "/Euro" for ::1 at 2022-08-20 22:07:13 +0200
+Started GET "/Sterling" for ::1 at 2022-08-20 22:07:13 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/Euro"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/Sterling"):
+  
